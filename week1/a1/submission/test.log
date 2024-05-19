@@ -1,0 +1,914 @@
+
+> web222-assignment-1@6.0.0 test
+> jest --
+
+jest-haste-map: Haste module naming collision: web222-assignment-1
+  The following files share their name; please adjust your hasteImpl:
+    * <rootDir>/package.json
+    * <rootDir>/submission/package.json
+
+PASS src/problem-00.test.js
+FAIL src/problem-07.test.js
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for TXT extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "text/plain"
+    Received: undefined
+
+      3 | describe('Problem 7 - mimeTypeFromFilename() function', function () {
+      4 |   test('correct MIME type for TXT extension', function () {
+    > 5 |     expect(mimeTypeFromFilename('doc.txt')).toEqual('text/plain');
+        |                                             ^
+      6 |   });
+      7 |
+      8 |   test('correct MIME type for HTML extensions', function () {
+
+      at Object.toEqual (src/problem-07.test.js:5:45)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for HTML extensions
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "text/html"
+    Received: undefined
+
+       7 |
+       8 |   test('correct MIME type for HTML extensions', function () {
+    >  9 |     expect(mimeTypeFromFilename('index.html')).toEqual('text/html');
+         |                                                ^
+      10 |     expect(mimeTypeFromFilename('index.htm')).toEqual('text/html');
+      11 |   });
+      12 |
+
+      at Object.toEqual (src/problem-07.test.js:9:48)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for CSS extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "text/css"
+    Received: undefined
+
+      12 |
+      13 |   test('correct MIME type for CSS extension', function () {
+    > 14 |     expect(mimeTypeFromFilename('styles.css')).toEqual('text/css');
+         |                                                ^
+      15 |   });
+      16 |
+      17 |   test('correct MIME type for JS extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:14:48)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for JS extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/javascript"
+    Received: undefined
+
+      16 |
+      17 |   test('correct MIME type for JS extension', function () {
+    > 18 |     expect(mimeTypeFromFilename('script.js')).toEqual('application/javascript');
+         |                                               ^
+      19 |   });
+      20 |
+      21 |   test('correct MIME type for JPEG extensions', function () {
+
+      at Object.toEqual (src/problem-07.test.js:18:47)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for JPEG extensions
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/jpeg"
+    Received: undefined
+
+      20 |
+      21 |   test('correct MIME type for JPEG extensions', function () {
+    > 22 |     expect(mimeTypeFromFilename('photo.jpg')).toEqual('image/jpeg');
+         |                                               ^
+      23 |     expect(mimeTypeFromFilename('photo.jpeg')).toEqual('image/jpeg');
+      24 |   });
+      25 |
+
+      at Object.toEqual (src/problem-07.test.js:22:47)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for PNG extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/png"
+    Received: undefined
+
+      25 |
+      26 |   test('correct MIME type for PNG extension', function () {
+    > 27 |     expect(mimeTypeFromFilename('photo.png')).toEqual('image/png');
+         |                                               ^
+      28 |   });
+      29 |
+      30 |   test('correct MIME type for GIF extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:27:47)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for GIF extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/gif"
+    Received: undefined
+
+      29 |
+      30 |   test('correct MIME type for GIF extension', function () {
+    > 31 |     expect(mimeTypeFromFilename('animation.gif')).toEqual('image/gif');
+         |                                                   ^
+      32 |   });
+      33 |
+      34 |   test('correct MIME type for BMP extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:31:51)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for BMP extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/bmp"
+    Received: undefined
+
+      33 |
+      34 |   test('correct MIME type for BMP extension', function () {
+    > 35 |     expect(mimeTypeFromFilename('graphic.bmp')).toEqual('image/bmp');
+         |                                                 ^
+      36 |   });
+      37 |
+      38 |   test('correct MIME type for SVG extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:35:49)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for SVG extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/svg+xml"
+    Received: undefined
+
+      37 |
+      38 |   test('correct MIME type for SVG extension', function () {
+    > 39 |     expect(mimeTypeFromFilename('chart.svg')).toEqual('image/svg+xml');
+         |                                               ^
+      40 |   });
+      41 |
+      42 |   test('correct MIME type for JSON extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:39:47)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for JSON extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/json"
+    Received: undefined
+
+      41 |
+      42 |   test('correct MIME type for JSON extension', function () {
+    > 43 |     expect(mimeTypeFromFilename('data.json')).toEqual('application/json');
+         |                                               ^
+      44 |   });
+      45 |
+      46 |   test('correct MIME type for XML extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:43:47)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for XML extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/xml"
+    Received: undefined
+
+      45 |
+      46 |   test('correct MIME type for XML extension', function () {
+    > 47 |     expect(mimeTypeFromFilename('data.xml')).toEqual('application/xml');
+         |                                              ^
+      48 |   });
+      49 |
+      50 |   test('correct MIME type for CSV extension', function () {
+
+      at Object.toEqual (src/problem-07.test.js:47:46)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for CSV extension
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "text/csv"
+    Received: undefined
+
+      49 |
+      50 |   test('correct MIME type for CSV extension', function () {
+    > 51 |     expect(mimeTypeFromFilename('data.csv')).toEqual('text/csv');
+         |                                              ^
+      52 |   });
+      53 |
+      54 |   test('correct MIME type for unknown extensions', function () {
+
+      at Object.toEqual (src/problem-07.test.js:51:46)
+
+  ● Problem 7 - mimeTypeFromFilename() function › correct MIME type for unknown extensions
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/octet-stream"
+    Received: undefined
+
+      53 |
+      54 |   test('correct MIME type for unknown extensions', function () {
+    > 55 |     expect(mimeTypeFromFilename('file.exe')).toEqual('application/octet-stream');
+         |                                              ^
+      56 |     expect(mimeTypeFromFilename('library.dll')).toEqual('application/octet-stream');
+      57 |   });
+      58 |
+
+      at Object.toEqual (src/problem-07.test.js:55:46)
+
+  ● Problem 7 - mimeTypeFromFilename() function › absolute Unix file paths give correct MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/jpeg"
+    Received: undefined
+
+      58 |
+      59 |   test('absolute Unix file paths give correct MIME type', function () {
+    > 60 |     expect(mimeTypeFromFilename('/public/site/www/cat.jpg')).toEqual('image/jpeg');
+         |                                                              ^
+      61 |   });
+      62 |
+      63 |   test('absolute Windows file paths give correct MIME type', function () {
+
+      at Object.toEqual (src/problem-07.test.js:60:62)
+
+  ● Problem 7 - mimeTypeFromFilename() function › absolute Windows file paths give correct MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "text/csv"
+    Received: undefined
+
+      62 |
+      63 |   test('absolute Windows file paths give correct MIME type', function () {
+    > 64 |     expect(mimeTypeFromFilename('C:\\Documents\\Seneca\\WEB222\\students.csv')).toEqual('text/csv');
+         |                                                                                 ^
+      65 |   });
+      66 |
+      67 |   test('spaces in path give correct MIME type', function () {
+
+      at Object.toEqual (src/problem-07.test.js:64:81)
+
+  ● Problem 7 - mimeTypeFromFilename() function › spaces in path give correct MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "text/plain"
+    Received: undefined
+
+      66 |
+      67 |   test('spaces in path give correct MIME type', function () {
+    > 68 |     expect(mimeTypeFromFilename('/this path/has quite a/few spaces/doc.txt')).toEqual('text/plain');
+         |                                                                               ^
+      69 |   });
+      70 |
+      71 |   test('periods in path give correct MIME type', function () {
+
+      at Object.toEqual (src/problem-07.test.js:68:79)
+
+  ● Problem 7 - mimeTypeFromFilename() function › periods in path give correct MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "image/png"
+    Received: undefined
+
+      70 |
+      71 |   test('periods in path give correct MIME type', function () {
+    > 72 |     expect(mimeTypeFromFilename('/this.path/has.quite.a/few.periods/dog.png')).toEqual('image/png');
+         |                                                                                ^
+      73 |   });
+      74 |
+      75 |   test('relative path gives correct MIME type', function () {
+
+      at Object.toEqual (src/problem-07.test.js:72:80)
+
+  ● Problem 7 - mimeTypeFromFilename() function › relative path gives correct MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/json"
+    Received: undefined
+
+      74 |
+      75 |   test('relative path gives correct MIME type', function () {
+    > 76 |     expect(mimeTypeFromFilename('../names.json')).toEqual('application/json');
+         |                                                   ^
+      77 |   });
+      78 |
+      79 |   test('filename with no extension should give unknown MIME type', function () {
+
+      at Object.toEqual (src/problem-07.test.js:76:51)
+
+  ● Problem 7 - mimeTypeFromFilename() function › filename with no extension should give unknown MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/octet-stream"
+    Received: undefined
+
+      78 |
+      79 |   test('filename with no extension should give unknown MIME type', function () {
+    > 80 |     expect(mimeTypeFromFilename('/this/file/has/no/extension')).toEqual('application/octet-stream');
+         |                                                                 ^
+      81 |   });
+      82 |
+      83 |   test('filename with unexpected extension should give unknown MIME type', function () {
+
+      at Object.toEqual (src/problem-07.test.js:80:65)
+
+  ● Problem 7 - mimeTypeFromFilename() function › filename with unexpected extension should give unknown MIME type
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "application/octet-stream"
+    Received: undefined
+
+      82 |
+      83 |   test('filename with unexpected extension should give unknown MIME type', function () {
+    > 84 |     expect(mimeTypeFromFilename('/this/file/has/an/unknown/extension.cgi')).toEqual(
+         |                                                                             ^
+      85 |       'application/octet-stream'
+      86 |     );
+      87 |   });
+
+      at Object.toEqual (src/problem-07.test.js:84:77)
+
+FAIL src/problem-04.test.js
+  ● Problem 4 - toDateString() function › a date is correctly converted to a date string in the YYYY/MM/DD format
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2023/12/10"
+    Received: undefined
+
+      14 |     let date = new Date('December 10, 2023');
+      15 |     let result = toDateString(date, 'YYYY/MM/DD');
+    > 16 |     expect(result).toBe('2023/12/10');
+         |                    ^
+      17 |   });
+      18 |
+      19 |   test('a date is correctly converted to a date string in the DD/MM/YYYY format', function () {
+
+      at Object.toBe (src/problem-04.test.js:16:20)
+
+  ● Problem 4 - toDateString() function › a date is correctly converted to a date string in the DD/MM/YYYY format
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "10/12/2023"
+    Received: undefined
+
+      20 |     let date = new Date('December 10, 2023');
+      21 |     let result = toDateString(date, 'DD/MM/YYYY');
+    > 22 |     expect(result).toBe('10/12/2023');
+         |                    ^
+      23 |   });
+      24 |
+      25 |   test('a date is correctly converted to a date string in the MM/DD/YYYY format', function () {
+
+      at Object.toBe (src/problem-04.test.js:22:20)
+
+  ● Problem 4 - toDateString() function › a date is correctly converted to a date string in the MM/DD/YYYY format
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "12/10/2023"
+    Received: undefined
+
+      26 |     let date = new Date('December 10, 2023');
+      27 |     let result = toDateString(date, 'MM/DD/YYYY');
+    > 28 |     expect(result).toBe('12/10/2023');
+         |                    ^
+      29 |   });
+      30 |
+      31 |   test('an error is thrown if the format is unknown', function () {
+
+      at Object.toBe (src/problem-04.test.js:28:20)
+
+  ● Problem 4 - toDateString() function › an error is thrown if the format is unknown
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      31 |   test('an error is thrown if the format is unknown', function () {
+      32 |     let date = new Date('December 10, 2023');
+    > 33 |     expect(() => toDateString(date, 'M/D/Y')).toThrow();
+         |                                               ^
+      34 |   });
+      35 |
+      36 |   test('a date is correctly converted to a date string with expected month and day', function () {
+
+      at Object.toThrow (src/problem-04.test.js:33:47)
+
+  ● Problem 4 - toDateString() function › a date is correctly converted to a date string with expected month and day
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2023/12/17"
+    Received: undefined
+
+      37 |     let date = new Date('December 17, 2023');
+      38 |     let result = toDateString(date, 'YYYY/MM/DD');
+    > 39 |     expect(result).toBe('2023/12/17');
+         |                    ^
+      40 |   });
+      41 |
+      42 |   test('a date is correctly converted to a date string, with padded month', function () {
+
+      at Object.toBe (src/problem-04.test.js:39:20)
+
+  ● Problem 4 - toDateString() function › a date is correctly converted to a date string, with padded month
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2023/01/10"
+    Received: undefined
+
+      43 |     let date = new Date('January 10, 2023');
+      44 |     let result = toDateString(date, 'YYYY/MM/DD');
+    > 45 |     expect(result).toBe('2023/01/10');
+         |                    ^
+      46 |   });
+      47 |
+      48 |   test('a date is correctly converted to a date string, with padded day', function () {
+
+      at Object.toBe (src/problem-04.test.js:45:20)
+
+  ● Problem 4 - toDateString() function › a date is correctly converted to a date string, with padded day
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "2023/12/01"
+    Received: undefined
+
+      49 |     let date = new Date('December 01, 2023');
+      50 |     let result = toDateString(date, 'YYYY/MM/DD');
+    > 51 |     expect(result).toBe('2023/12/01');
+         |                    ^
+      52 |   });
+      53 |
+      54 |   test('toDateString and parseDateString are reversible', function () {
+
+      at Object.toBe (src/problem-04.test.js:51:20)
+
+  ● Problem 4 - toDateString() function › toDateString and parseDateString are reversible
+
+    TypeError: Cannot read properties of undefined (reading 'getFullYear')
+
+      4 | function compareDates(a, b) {
+      5 |   return (
+    > 6 |     a.getFullYear() === b.getFullYear() &&
+        |       ^
+      7 |     a.getMonth() === b.getMonth() &&
+      8 |     a.getDate() === b.getDate()
+      9 |   );
+
+      at getFullYear (src/problem-04.test.js:6:7)
+      at Object.compareDates (src/problem-04.test.js:58:12)
+
+  ● Problem 4 - toDateString() function › an invalid date causes an error to be thrown
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      61 |
+      62 |   test('an invalid date causes an error to be thrown', function () {
+    > 63 |     expect(() => toDateString('invalid date')).toThrow();
+         |                                                ^
+      64 |   });
+      65 | });
+      66 |
+
+      at Object.toThrow (src/problem-04.test.js:63:48)
+
+FAIL src/problem-03.test.js
+  ● Problem 3 - parseDateString() function › not passing a date string throws an Error
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+       9 |   test('not passing a date string throws an Error', function () {
+      10 |     // null
+    > 11 |     expect(() => parseDateString(null)).toThrow();
+         |                                         ^
+      12 |     // undefined
+      13 |     expect(() => parseDateString()).toThrow();
+      14 |     // empty string
+
+      at Object.toThrow (src/problem-03.test.js:11:41)
+
+  ● Problem 3 - parseDateString() function › passing an invalid date string format throws an Error
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      18 |   test('passing an invalid date string format throws an Error', function () {
+      19 |     // 2-digit year
+    > 20 |     expect(() => parseDateString('20/03/12')).toThrow();
+         |                                               ^
+      21 |     // 1-digit month
+      22 |     expect(() => parseDateString('2020/3/12')).toThrow();
+      23 |     // using spaces vs. slashes
+
+      at Object.toThrow (src/problem-03.test.js:20:47)
+
+  ● Problem 3 - parseDateString() function › thrown error uses a proper Error object and message
+
+    expect(received).toThrow(expected)
+
+    Expected message: "invalid date string, expected a `YYYY/MM/DD` or `DD/MM/YYYY` formatted string"
+
+    Received function did not throw
+
+      32 |     const message = 'invalid date string, expected a `YYYY/MM/DD` or `DD/MM/YYYY` formatted string';
+      33 |     const error = new Error(message);
+    > 34 |     expect(() => parseDateString()).toThrow(error);
+         |                                     ^
+      35 |   });
+      36 |
+      37 |   test('passing a valid YYYY/MM/DD date string results in correct date object', function () {
+
+      at Object.toThrow (src/problem-03.test.js:34:37)
+
+  ● Problem 3 - parseDateString() function › passing a valid YYYY/MM/DD date string results in correct date object
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      37 |   test('passing a valid YYYY/MM/DD date string results in correct date object', function () {
+      38 |     let result = parseDateString('2023/01/15');
+    > 39 |     expect(assertDate(result, 2023, 1, 15)).toBe(true);
+         |                                             ^
+      40 |   });
+      41 |
+      42 |   test('passing a valid DD/MM/YYYY date string results in correct date object', function () {
+
+      at Object.toBe (src/problem-03.test.js:39:45)
+
+  ● Problem 3 - parseDateString() function › passing a valid DD/MM/YYYY date string results in correct date object
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      42 |   test('passing a valid DD/MM/YYYY date string results in correct date object', function () {
+      43 |     let result = parseDateString('15/01/2023');
+    > 44 |     expect(assertDate(result, 2023, 1, 15)).toBe(true);
+         |                                             ^
+      45 |   });
+      46 | });
+      47 |
+
+      at Object.toBe (src/problem-03.test.js:44:45)
+
+FAIL src/problem-05.test.js
+  ● Problem 5 - normalizeTime() function › a valid time in the form h:m:s AM/PM is returned as expected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "(13, 30, 0)"
+    Received: undefined
+
+      20 |   test('a valid time in the form h:m:s AM/PM is returned as expected', function () {
+      21 |     let time = '01:30:00 PM';
+    > 22 |     expect(normalizeTime(time)).toBe('(13, 30, 0)');
+         |                                 ^
+      23 |   });
+      24 |
+      25 |   test('a valid time in the form H:M:S is returned as expected', function () {
+
+      at Object.toBe (src/problem-05.test.js:22:33)
+
+  ● Problem 5 - normalizeTime() function › a valid time in the form H:M:S is returned as expected
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "(13, 30, 0)"
+    Received: undefined
+
+      25 |   test('a valid time in the form H:M:S is returned as expected', function () {
+      26 |     let time = '13:30:00';
+    > 27 |     expect(normalizeTime(time)).toBe('(13, 30, 0)');
+         |                                 ^
+      28 |   });
+      29 |
+      30 |   test('an invalid time in the form h:m:s AM/PM is returned as null', function () {
+
+      at Object.toBe (src/problem-05.test.js:27:33)
+
+  ● Problem 5 - normalizeTime() function › an invalid time in the form h:m:s AM/PM is returned as null
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: undefined
+
+      30 |   test('an invalid time in the form h:m:s AM/PM is returned as null', function () {
+      31 |     let time = '13:30:00 PM';
+    > 32 |     expect(normalizeTime(time)).toBe(null);
+         |                                 ^
+      33 |   });
+      34 |
+      35 |   test('an invalid time in the form H:M:S is returned as null', function () {
+
+      at Object.toBe (src/problem-05.test.js:32:33)
+
+  ● Problem 5 - normalizeTime() function › an invalid time in the form H:M:S is returned as null
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: undefined
+
+      35 |   test('an invalid time in the form H:M:S is returned as null', function () {
+      36 |     let time = '24:30:00';
+    > 37 |     expect(normalizeTime(time)).toBe(null);
+         |                                 ^
+      38 |   });
+      39 |
+      40 |   test('a time with invalid minute value is returned as null', function () {
+
+      at Object.toBe (src/problem-05.test.js:37:33)
+
+  ● Problem 5 - normalizeTime() function › a time with invalid minute value is returned as null
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: undefined
+
+      40 |   test('a time with invalid minute value is returned as null', function () {
+      41 |     let time = '01:60:00 PM';
+    > 42 |     expect(normalizeTime(time)).toBe(null);
+         |                                 ^
+      43 |     time = '13:60:00';
+      44 |     expect(normalizeTime(time)).toBe(null);
+      45 |   });
+
+      at Object.toBe (src/problem-05.test.js:42:33)
+
+  ● Problem 5 - normalizeTime() function › a time with invalid second value is returned as null
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: null
+    Received: undefined
+
+      47 |   test('a time with invalid second value is returned as null', function () {
+      48 |     let time = '01:30:60 PM';
+    > 49 |     expect(normalizeTime(time)).toBe(null);
+         |                                 ^
+      50 |     time = '13:30:60';
+      51 |     expect(normalizeTime(time)).toBe(null);
+      52 |   });
+
+      at Object.toBe (src/problem-05.test.js:49:33)
+
+FAIL src/problem-08.test.js
+  ● Problem 8 - buildApiEndpoint() function › correct values produce an expected endpoint
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "/users/123/John%20Doe"
+    Received: undefined
+
+      4 |   test('correct values produce an expected endpoint', function () {
+      5 |     let endpoint = buildApiEndpoint('users', '123', 'John Doe');
+    > 6 |     expect(endpoint).toEqual('/users/123/John%20Doe');
+        |                      ^
+      7 |   });
+      8 |
+      9 |   test('extraData values are properly encoded in endpoint', function () {
+
+      at Object.toEqual (src/problem-08.test.js:6:22)
+
+  ● Problem 8 - buildApiEndpoint() function › extraData values are properly encoded in endpoint
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "/products/456/Special%3A%20Limited%20Edition"
+    Received: undefined
+
+       9 |   test('extraData values are properly encoded in endpoint', function () {
+      10 |     let endpoint = buildApiEndpoint('products', '456', 'Special: Limited Edition');
+    > 11 |     expect(endpoint).toEqual('/products/456/Special%3A%20Limited%20Edition');
+         |                      ^
+      12 |   });
+      13 |
+      14 |   test('extraData is optional', function () {
+
+      at Object.toEqual (src/problem-08.test.js:11:22)
+
+  ● Problem 8 - buildApiEndpoint() function › extraData is optional
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "/users/123"
+    Received: undefined
+
+      14 |   test('extraData is optional', function () {
+      15 |     let endpoint = buildApiEndpoint('users', '123');
+    > 16 |     expect(endpoint).toEqual('/users/123');
+         |                      ^
+      17 |   });
+      18 |
+      19 |   test('missing or empty resourceType or resourceId throw', function () {
+
+      at Object.toEqual (src/problem-08.test.js:16:22)
+
+  ● Problem 8 - buildApiEndpoint() function › missing or empty resourceType or resourceId throw
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      18 |
+      19 |   test('missing or empty resourceType or resourceId throw', function () {
+    > 20 |     expect(() => buildApiEndpoint()).toThrow();
+         |                                      ^
+      21 |     expect(() => buildApiEndpoint('users')).toThrow();
+      22 |     expect(() => buildApiEndpoint('', '123', 'John Doe')).toThrow();
+      23 |     expect(() => buildApiEndpoint('users', '', 'John Doe')).toThrow();
+
+      at Object.toThrow (src/problem-08.test.js:20:38)
+
+  ● Problem 8 - buildApiEndpoint() function › extraData can be left out
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "/users/123"
+    Received: undefined
+
+      27 |   test('extraData can be left out', function () {
+      28 |     let endpoint = buildApiEndpoint('users', '123');
+    > 29 |     expect(endpoint).toEqual('/users/123');
+         |                      ^
+      30 |   });
+      31 |
+      32 |   test('resourceId can be a number', function () {
+
+      at Object.toEqual (src/problem-08.test.js:29:22)
+
+  ● Problem 8 - buildApiEndpoint() function › resourceId can be a number
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "/users/123/John%20Doe"
+    Received: undefined
+
+      32 |   test('resourceId can be a number', function () {
+      33 |     let endpoint = buildApiEndpoint('users', 123, 'John Doe');
+    > 34 |     expect(endpoint).toEqual('/users/123/John%20Doe');
+         |                      ^
+      35 |   });
+      36 |
+      37 |   test('resourceId can be a string containing a number', function () {
+
+      at Object.toEqual (src/problem-08.test.js:34:22)
+
+  ● Problem 8 - buildApiEndpoint() function › resourceId can be a string containing a number
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: "/users/123/John%20Doe"
+    Received: undefined
+
+      37 |   test('resourceId can be a string containing a number', function () {
+      38 |     let endpoint = buildApiEndpoint('users', '123', 'John Doe');
+    > 39 |     expect(endpoint).toEqual('/users/123/John%20Doe');
+         |                      ^
+      40 |   });
+      41 | });
+      42 |
+
+      at Object.toEqual (src/problem-08.test.js:39:22)
+
+PASS src/problem-02.test.js
+  ● Console
+
+    console.log
+      "rel with space"
+
+      at log (src/solutions.js:220:13)
+
+    console.log
+      "rel	with	tab"
+
+      at log (src/solutions.js:220:13)
+
+FAIL src/problem-06.test.js
+  ● Problem 6 - formatTimes() › a single time is valid
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "[(16, 26, 24)]"
+    Received: undefined
+
+      4 |   test('a single time is valid', function () {
+      5 |     let result = formatTimes('4:26:24 PM');
+    > 6 |     expect(result).toBe('[(16, 26, 24)]');
+        |                    ^
+      7 |   });
+      8 |
+      9 |   test('valid times of the form h:m:s should be formatted correctly in a list', function () {
+
+      at Object.toBe (src/problem-06.test.js:6:20)
+
+  ● Problem 6 - formatTimes() › valid times of the form h:m:s should be formatted correctly in a list
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "[(1, 16, 24), (1, 16, 25), (1, 16, 26)]"
+    Received: undefined
+
+       9 |   test('valid times of the form h:m:s should be formatted correctly in a list', function () {
+      10 |     let result = formatTimes('1:16:24', '1:16:25', '1:16:26');
+    > 11 |     expect(result).toBe('[(1, 16, 24), (1, 16, 25), (1, 16, 26)]');
+         |                    ^
+      12 |   });
+      13 |
+      14 |   test('valid times of the form h:m:s AM/PM should be formatted correctly in a list', function () {
+
+      at Object.toBe (src/problem-06.test.js:11:20)
+
+  ● Problem 6 - formatTimes() › valid times of the form h:m:s AM/PM should be formatted correctly in a list
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "[(16, 16, 24), (4, 16, 25)]"
+    Received: undefined
+
+      14 |   test('valid times of the form h:m:s AM/PM should be formatted correctly in a list', function () {
+      15 |     let result = formatTimes('4:16:24 PM', '4:16:25 AM');
+    > 16 |     expect(result).toBe('[(16, 16, 24), (4, 16, 25)]');
+         |                    ^
+      17 |   });
+      18 |
+      19 |   test('invalid times are skipped', function () {
+
+      at Object.toBe (src/problem-06.test.js:16:20)
+
+  ● Problem 6 - formatTimes() › invalid times are skipped
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "[(4, 16, 24), (4, 16, 25)]"
+    Received: undefined
+
+      19 |   test('invalid times are skipped', function () {
+      20 |     let result = formatTimes('4:16:24', '60:60:60', '100:100:100', '4:16:25 AM');
+    > 21 |     expect(result).toBe('[(4, 16, 24), (4, 16, 25)]');
+         |                    ^
+      22 |   });
+      23 |
+      24 |   test('if all values are invalid, an empty list is returned', function () {
+
+      at Object.toBe (src/problem-06.test.js:21:20)
+
+  ● Problem 6 - formatTimes() › if all values are invalid, an empty list is returned
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "[]"
+    Received: undefined
+
+      24 |   test('if all values are invalid, an empty list is returned', function () {
+      25 |     let result = formatTimes('60:60:60', '100:100:100');
+    > 26 |     expect(result).toBe('[]');
+         |                    ^
+      27 |   });
+      28 | });
+      29 |
+
+      at Object.toBe (src/problem-06.test.js:26:20)
+
+PASS src/problem-01.test.js
+
+Test Suites: 6 failed, 3 passed, 9 total
+Tests:       52 failed, 13 passed, 65 total
+Snapshots:   0 total
+Time:        0.343 s, estimated 1 s
+Ran all test suites.

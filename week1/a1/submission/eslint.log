@@ -1,0 +1,18 @@
+
+> web222-assignment-1@6.0.0 eslint
+> eslint src/**/*.js
+
+
+/Users/garychang/Documents/GitHub/Semester2/WEB222/week1/a1/src/solutions.js
+  288:26  error  'value' is defined but never used         no-unused-vars
+  346:23  error  'value' is defined but never used         no-unused-vars
+  346:30  error  'format' is defined but never used        no-unused-vars
+  378:24  error  'value' is defined but never used         no-unused-vars
+  409:25  error  'values' is defined but never used        no-unused-vars
+  444:31  error  'filename' is defined but never used      no-unused-vars
+  497:27  error  'resourceType' is defined but never used  no-unused-vars
+  497:41  error  'resourceId' is defined but never used    no-unused-vars
+  497:53  error  'extraData' is defined but never used     no-unused-vars
+
+✖ 9 problems (9 errors, 0 warnings)
+
