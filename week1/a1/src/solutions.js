@@ -227,13 +227,7 @@ function createLinkTag(rel, href) {
 
   return ret;
 }
-// let rel = 'rel with space';
-// let href = 'href with space';
-// let rel = 'stylesheet ';
-// let href = 'styles.css                             ';
-// let rel = '  stylesheet';
-// let href = '                  styles.css';
-//console.log(createLinkTag(rel, href));
+
 /*******************************************************************************
  * Problem 3: extract Date from date string
  *
@@ -286,26 +280,30 @@ function createLinkTag(rel, href) {
  ******************************************************************************/
 
 function parseDateString(value) {
-  //   try {
-  //     let time = value.split('/');
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  //   let re1 = /\d\d/g;
-  //   let re2 = /\d\d\d\d/g;
-  //   try {
-  //     if (time[0] === re1 && time[2] === re2) {
-  //       return true;
-  //     }
-  //   } catch (e) {
-  //     //console.log(e);
-  //   }
-  //   //throw new Error('invalid date string, expected a `YYYY/MM/DD` or `DD/MM/YYYY` formatted string');
-  //   let ret = new Date();
-  //   //console.log('hih');
-  //   return ret;
+  let err = 'invalid date string, expected a `YYYY/MM/DD` or `DD/MM/YYYY` formatted string';
+
+  let time;
+  try {
+    time = value.split('/');
+  } catch (e) {
+    throw new Error(err);
+  }
+
+  let ret = new Date();
+
+  if (time[0].length === 4 && time[1].length === 2 && time[2].length === 2) {
+    ret.setFullYear(time[0]);
+    ret.setMonth(time[1] - 1);
+    ret.setDate(time[2]);
+  } else if (time[0].length === 2 && time[1].length === 2 && time[2].length === 4) {
+    ret.setFullYear(time[2]);
+    ret.setMonth(time[1] - 1);
+    ret.setDate(time[0]);
+  } else {
+    throw new Error(err);
+  }
+  return ret;
 }
-// parseDateString(null);
 /*******************************************************************************
  * Problem 4: format a Date Object to use a given date string format.
  *

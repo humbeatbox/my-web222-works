@@ -181,6 +181,18 @@ function speciesCoordinates3(data) {
  ******************************************************************************/
 function observationsByQualityGrade(data, qualityGrade) {
   // TODO
+
+  
+  if (
+    qualityGrade === 'research' ||
+    qualityGrade === 'needs_id' ||
+    qualityGrade === 'casual' ||
+    qualityGrade === null
+  ) {
+    return true;
+
+    throw Error();
+  
 }
 
 /*******************************************************************************
