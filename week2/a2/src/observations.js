@@ -72,8 +72,7 @@
  ******************************************************************************/
 function getTotalResults(data) {
   // TODO: fix this code so it gets and returns the `total_results` property from observation data
-
-  return data;
+  return data.total_results;
 }
 
 /*******************************************************************************
@@ -96,6 +95,13 @@ function getTotalResults(data) {
  ******************************************************************************/
 function speciesCoordinates(data) {
   // TODO
+
+  for (let i = 0; i < data.per_page; i++) {
+    const info = data.results[i];
+
+    console.log(`"${info.species_guess}" observed at coordinates (${info.location})`);
+  }
+  // `"Muskrat" observed at coordinates (43.79248394,-79.33852796)`
 }
 
 /*******************************************************************************
@@ -108,6 +114,9 @@ function speciesCoordinates(data) {
  ******************************************************************************/
 function speciesCoordinates2(data) {
   // TODO
+  data.results.forEach((info) => {
+    console.log(`"${info.species_guess}" observed at coordinates (${info.location})`);
+  });
 }
 
 /*******************************************************************************
@@ -125,6 +134,12 @@ function speciesCoordinates2(data) {
  ******************************************************************************/
 function speciesCoordinates3(data) {
   // TODO
+  for (const info of data.results) {
+    console.log(
+      `"${info.species_guess}" observed at coordinates (${info.location[0]}, ${info.location[1]})`
+    );
+    //have a space
+  }
 }
 
 /*******************************************************************************
