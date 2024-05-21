@@ -416,7 +416,7 @@ function normalizeTime(value) {
       return null;
     }
     if (time[3] === 'AM') {
-      return `(${2 * hr}, ${min}, ${sec})`;
+      return `(${hr}, ${min}, ${sec})`;
     } else if (time[3] === 'PM') {
       return `(${hr + 12}, ${min}, ${sec})`;
     }
@@ -457,9 +457,15 @@ function normalizeTime(value) {
  ******************************************************************************/
 
 function formatTimes(...values) {
-  // Replace this comment with your code...
+  let ret = values.map((n) => normalizeTime(n)).filter((n) => n !== null);
+  if (ret.length >= 2) {
+    return `[${ret.join(', ')}]`;
+  } else if (ret.length === 1) {
+    return `[${ret}]`;
+  } else {
+    return `[]`;
+  }
 }
-
 /*******************************************************************************
  * Problem 7: determine the MIME type from a filename
  *
