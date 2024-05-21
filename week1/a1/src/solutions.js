@@ -500,8 +500,35 @@ function formatTimes(...values) {
 function mimeTypeFromFilename(filename) {
   // Replace this comment with your code...
   // NOTE: Use a switch statement in your solution.
+  switch (true) {
+    case /\.txt$/i.test(filename):
+      return 'text/plain';
+    case /\.(html?|htm)$/i.test(filename):
+      return 'text/html';
+    case /\.css$/i.test(filename):
+      return 'text/css';
+    case /\.js$/i.test(filename):
+      return 'application/javascript';
+    case /\.(jpg|jpeg)$/i.test(filename):
+      return 'image/jpeg';
+    case /\.png$/i.test(filename):
+      return 'image/png';
+    case /\.gif$/i.test(filename):
+      return 'image/gif';
+    case /\.bmp$/i.test(filename):
+      return 'image/bmp';
+    case /\.svg$/i.test(filename):
+      return 'image/svg+xml';
+    case /\.json$/i.test(filename):
+      return 'application/json';
+    case /\.xml$/i.test(filename):
+      return 'application/xml';
+    case /\.csv$/i.test(filename):
+      return 'text/csv';
+    default:
+      return 'application/octet-stream';
+  }
 }
-
 /*******************************************************************************
  * Problem 8 - build a REST API endpoint
  *
