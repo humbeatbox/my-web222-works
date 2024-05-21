@@ -347,25 +347,27 @@ function toDateString(value, format) {
   let day = value.getDate();
 
   console.log(typeof year);
-  let time = format.split("/");
+  let time = format.split('/');
   console.log(time);
-  let newTime = time.map((n)=>{
-    if(n === 'YYYY'){
-      return year;
-    }else if(n === 'MM'){
-      return month + 1 >= 10 ? (month += 1) : (month = `0${month + 1}`);
-    }else if(n === 'DD'){
-      return day >= 10 ? day : (day = `0${day}`);
-    }else{
-      throw Error;
-    }
-  }).join("/");
+  let newTime = time
+    .map((n) => {
+      if (n === 'YYYY') {
+        return year;
+      } else if (n === 'MM') {
+        return month + 1 >= 10 ? (month += 1) : (month = `0${month + 1}`);
+      } else if (n === 'DD') {
+        return day >= 10 ? day : (day = `0${day}`);
+      } else {
+        throw Error;
+      }
+    })
+    .join('/');
   return newTime;
 }
 
- let date = new Date('December 10, 2023');
-    let result = toDateString(date, 'DD/MM/YYYY');
-console.log(result);
+//  let date = new Date('December 10, 2023');
+//     let result = toDateString(date, 'DD/MM/YYYY');
+// console.log(result);
 /*******************************************************************************
  * Problem 5: parse a time from a digital clock
  *
@@ -395,9 +397,38 @@ console.log(result);
  */
 
 function normalizeTime(value) {
-  // Replace this comment with your code...
-}
+  let reg = /[:\s]/g;
+  let time = value.split(reg);
+  const hr = Number(time[0]); //hour
+  const min = Number(time[1]); //min
+  const sec = Number(time[2]); //secs
+  //formal error
 
+  if (min < 0 || min > 59) {
+    return null;
+  } else if (sec < 0 || sec > 59) {
+    return null;
+  }
+
+  if (time.length === 4 && (time[3] === 'PM' || time[3] === 'AM')) {
+    //12
+    if (hr < 0 || hr > 12) {
+      return null;
+    }
+    if (time[3] === 'AM') {
+      return `(${2 * hr}, ${min}, ${sec})`;
+    } else if (time[3] === 'PM') {
+      return `(${hr + 12}, ${min}, ${sec})`;
+    }
+  } else if (time.length === 3) {
+    if (hr < 0 || hr > 24) {
+      return null;
+    } else if (hr === 24 && hr > 0) {
+      return null;
+    }
+    return `(${hr}, ${min}, ${sec})`;
+  }
+}
 /*******************************************************************************
  * Problem 6: format any number of times as a list in a string
  *
