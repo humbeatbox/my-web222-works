@@ -579,6 +579,12 @@ function mimeTypeFromFilename(filename) {
 
 function buildApiEndpoint(resourceType, resourceId, extraData) {
   // Replace this comment with your code...
+  if (!resourceType || !resourceId || extraData === '') {
+    throw Error;
+  }
+  const req = encodeURIComponent(extraData);
+
+  return `/${resourceType}/${resourceId}${req === 'undefined' ? '' : `/${req}`}`;
 }
 
 // Our unit test files need to access the functions we defined
