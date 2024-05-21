@@ -342,9 +342,30 @@ function parseDateString(value) {
  ******************************************************************************/
 
 function toDateString(value, format) {
-  // Replace this comment with your code...
+  let year = value.getFullYear();
+  let month = value.getMonth();
+  let day = value.getDate();
+
+  console.log(typeof year);
+  let time = format.split("/");
+  console.log(time);
+  let newTime = time.map((n)=>{
+    if(n === 'YYYY'){
+      return year;
+    }else if(n === 'MM'){
+      return month + 1 >= 10 ? (month += 1) : (month = `0${month + 1}`);
+    }else if(n === 'DD'){
+      return day >= 10 ? day : (day = `0${day}`);
+    }else{
+      throw Error;
+    }
+  }).join("/");
+  return newTime;
 }
 
+ let date = new Date('December 10, 2023');
+    let result = toDateString(date, 'DD/MM/YYYY');
+console.log(result);
 /*******************************************************************************
  * Problem 5: parse a time from a digital clock
  *
