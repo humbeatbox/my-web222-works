@@ -197,7 +197,7 @@ function observationsByQualityGrade(data, qualityGrade) {
   } else {
     throw Error();
   }
-  return ret;
+  return ret; //return an object array
 }
 /*******************************************************************************
  * Problem 02 Part 2: observationsByQualityGrades(data, ...qualityGrades)
@@ -253,17 +253,17 @@ function transformObservation(original) {
   return {
     id: original.id,
     name: original.species_guess.toLowerCase(),
-    isExtinct:
+    isExtinct: !!(
       original.conservation_status &&
       original.conservation_status.status_name === 'extinct in the wild'
-        ? true
-        : false,
+    ),
     images: original.photos.map((im) => ({
       url: im.url,
       copyright: im.attribution
     })),
     observer: `${original.user.login_exact}@inaturalist.com`
   };
+  //return a object
 }
 
 /*******************************************************************************
@@ -283,9 +283,14 @@ function transformObservation(original) {
  *  - return the new Array containing all the transformed Objects
  ******************************************************************************/
 function transformObservations(data) {
-  // TODO
+  // data is a object array
+  let ret = [];
+  for (let n of data.results) {
+    //push the object to new array
+    ret.push(transformObservation(n));
+  }
+  return ret; //return an array
 }
-
 /*******************************************************************************
  * Problem 3 Part III: transformObservations2(data) with .map()
  *
@@ -300,7 +305,10 @@ function transformObservations(data) {
  *  - return the Array created by the .map() method
  ******************************************************************************/
 function transformObservations2(data) {
-  // TODO
+  // data is object array and data.results are object
+  //transformObservations get a object and return a object
+  //get a object (data.results) and map using the callback function transformObservations
+  return data.results.map((n) => transformObservation(n)); //return a array
 }
 
 /*******************************************************************************
