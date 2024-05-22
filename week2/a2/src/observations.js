@@ -101,9 +101,9 @@ function speciesCoordinates(data) {
 
     console.log(`"${info.species_guess}" observed at coordinates (${info.location})`);
   }
+
   // `"Muskrat" observed at coordinates (43.79248394,-79.33852796)`
 }
-
 /*******************************************************************************
  * Problem 01 Part 2: use forEach() to iterate over Arrays
  *
@@ -118,7 +118,6 @@ function speciesCoordinates2(data) {
     console.log(`"${info.species_guess}" observed at coordinates (${info.location})`);
   });
 }
-
 /*******************************************************************************
  * Problem 01 Part 3: use a for-of loop to iterate over Arrays
  *
@@ -181,18 +180,15 @@ function speciesCoordinates3(data) {
  ******************************************************************************/
 function observationsByQualityGrade(data, qualityGrade) {
   // TODO
-
-  
-  if (
-    qualityGrade === 'research' ||
-    qualityGrade === 'needs_id' ||
-    qualityGrade === 'casual' ||
-    qualityGrade === null
-  ) {
-    return true;
-
-    throw Error();
-  
+  // if (
+  //   qualityGrade === 'research' ||
+  //   qualityGrade === 'needs_id' ||
+  //   qualityGrade === 'casual' ||
+  //   qualityGrade === null
+  // ) {
+  //   return true;
+  //   throw Error();
+  // }
 }
 
 /*******************************************************************************
