@@ -180,17 +180,29 @@ function speciesCoordinates3(data) {
  ******************************************************************************/
 function observationsByQualityGrade(data, qualityGrade) {
   // TODO
-  // if (
-  //   qualityGrade === 'research' ||
-  //   qualityGrade === 'needs_id' ||
-  //   qualityGrade === 'casual' ||
-  //   qualityGrade === null
-  // ) {
-  //   return true;
-  //   throw Error();
-  // }
+  if (qualityGrade !== null) {
+    qualityGrade = qualityGrade.toLowerCase();
+  }
+  let ret = [];
+  if (
+    qualityGrade === 'research' ||
+    qualityGrade === 'RESEARCH' ||
+    qualityGrade === 'needs_id' ||
+    qualityGrade === 'NEEDS_ID' ||
+    qualityGrade === 'casual' ||
+    qualityGrade === 'CASUAL' ||
+    qualityGrade === null
+  ) {
+    for (let n of data.results) {
+      if (n.quality_grade === qualityGrade) {
+        ret.push(n);
+      }
+    }
+  } else {
+    throw Error();
+  }
+  return ret;
 }
-
 /*******************************************************************************
  * Problem 02 Part 2: observationsByQualityGrades(data, ...qualityGrades)
  *
@@ -212,6 +224,9 @@ function observationsByQualityGrade(data, qualityGrade) {
  ******************************************************************************/
 function observationsByQualityGrades(data, ...qualityGrades) {
   // TODO
+  for (let n of qualityGrades) {
+    observationsByQualityGrade(data, n);
+  }
 }
 
 /*******************************************************************************
