@@ -15,6 +15,8 @@
  * Please see all unit tests in the files problem-01.test.js, problem-02.test.js, etc.
  */
 
+const data = require('./data');
+
 /*******************************************************************************
  * Problem 0: learn how to work with the cases data.
  *
@@ -248,6 +250,20 @@ function observationsByQualityGrades(data, ...qualityGrades) {
  ******************************************************************************/
 function transformObservation(original) {
   // TODO
+  return {
+    id: original.id,
+    name: original.species_guess.toLowerCase(),
+    isExtinct:
+      original.conservation_status &&
+      original.conservation_status.status_name === 'extinct in the wild'
+        ? true
+        : false,
+    images: original.photos.map((im) => ({
+      url: im.url,
+      copyright: im.attribution
+    })),
+    observer: `${original.user.login_exact}@inaturalist.com`
+  };
 }
 
 /*******************************************************************************
