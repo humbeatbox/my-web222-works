@@ -180,21 +180,15 @@ function speciesCoordinates3(data) {
  ******************************************************************************/
 function observationsByQualityGrade(data, qualityGrade) {
   // TODO
+  let myQG = qualityGrade;
   if (qualityGrade !== null) {
-    qualityGrade = qualityGrade.toLowerCase();
+    // qualityGrade = qualityGrade.toLowerCase();
+    myQG = myQG.toLowerCase();
   }
   let ret = [];
-  if (
-    qualityGrade === 'research' ||
-    qualityGrade === 'RESEARCH' ||
-    qualityGrade === 'needs_id' ||
-    qualityGrade === 'NEEDS_ID' ||
-    qualityGrade === 'casual' ||
-    qualityGrade === 'CASUAL' ||
-    qualityGrade === null
-  ) {
+  if (myQG === 'research' || myQG === 'needs_id' || myQG === 'casual' || myQG === null) {
     for (let n of data.results) {
-      if (n.quality_grade === qualityGrade) {
+      if (n.quality_grade === myQG) {
         ret.push(n);
       }
     }
@@ -224,11 +218,14 @@ function observationsByQualityGrade(data, qualityGrade) {
  ******************************************************************************/
 function observationsByQualityGrades(data, ...qualityGrades) {
   // TODO
-  for (let n of qualityGrades) {
-    observationsByQualityGrade(data, n);
+  //can not use the push it will be two dimension array!!!!!!!!!
+  //if use the concat we need to reassign to a new array!!!!!!!!
+  let ret = [];
+  for (let i of qualityGrades) {
+    ret = ret.concat(observationsByQualityGrade(data, i));
   }
+  return ret;
 }
-
 /*******************************************************************************
  * Problem 3 Part I: transformObservation(original)
  *
