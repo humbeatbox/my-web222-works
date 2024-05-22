@@ -22,6 +22,18 @@ npm run test-watch problem-00.test
 npm run prepare-submission
 ```
 
+## Version
+
+V1.1.1.1
+
+First means the week of assignment(a1 or a2).
+
+Second means problem number.
+
+Third means part of problem.
+
+Last means the version of each part.
+
 ## Use the following package to make a better code
 
 ```=javascript
