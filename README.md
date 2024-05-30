@@ -1,5 +1,8 @@
 # Use the following code to run the node
 
+- go to the src directory
+- run the following code to get the module
+
 ```
 npm install
 ```
