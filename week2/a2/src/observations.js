@@ -350,7 +350,12 @@ function transformObservations2(data) {
  *  - use the .filter() method to locate items by taxon name, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
  ******************************************************************************/
 function getObservationsByTaxa(data, ...taxaNames) {
-  // TODO
+  return data.results.filter((observation) =>
+    taxaNames.includes(observation.taxon.iconic_taxon_name)
+  );
+  //use the data.results.filter to check every object in the data if the callback function return true, it will add it to the array
+  //in callback function every object will be checked, that means if the taxaNames array have the name that include in this object data
+  //it will return true --> will be add to the return array
 }
 
 /*******************************************************************************
@@ -380,6 +385,7 @@ function getObservationsByTaxa(data, ...taxaNames) {
 function getObservationsByLocation(data, options = {}) {
   // TODO
 }
+//return Array of observations
 
 /*******************************************************************************
  * Problem 06: getPlaceURLs()

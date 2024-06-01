@@ -141,19 +141,27 @@ function toCamelCase(name, uppercase) {
   let words = name.split('-');
   let ret;
   //handle the first word
-  if (uppercase) {
-    ret = words[0].slice(0, 1).toUpperCase();
-    ret += words[0].slice(1);
-    //console.log(ret);
-  } else {
-    ret = words[0];
-  }
-  //address the rest
-  for (let i = 1; i < words.length; i++) {
-    ret += words[i].slice(0, 1).toUpperCase();
-    ret += words[i].slice(1);
-  }
-  return ret;
+  // if (uppercase) {
+  //   ret = words[0].slice(0, 1).toUpperCase();
+  //   ret += words[0].slice(1);
+  //   //console.log(ret);
+  // } else {
+  //   ret = words[0];
+  // }
+  // //address the rest
+  // for (let i = 1; i < words.length; i++) {
+  //   ret += words[i].slice(0, 1).toUpperCase();
+  //   ret += words[i].slice(1);
+  // }
+
+  words.forEach((n) => {
+    if (uppercase) {
+      return (ret = n.map(n));
+    }
+    return (ret = n.map(n.slice(0, 1).toUpperCase() + n.slice(1)));
+  });
+
+  //return ret;
 }
 /*******************************************************************************
  * Problem 2: create an HTML <link> element with the given href and rel values.
