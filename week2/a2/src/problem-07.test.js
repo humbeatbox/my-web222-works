@@ -13,6 +13,7 @@ describe('Problem 07 - getSpeciesObservations() function', function () {
 
   test('should return an Object with the right properties', function () {
     let result = getSpeciesObservations(sampleData);
+    console.log(result);
     expect(typeof result === 'object').toBe(true);
     expect(typeof result['Ondatra zibethicus'] === 'number').toBe(true);
     expect(result['Ondatra zibethicus']).toBe(1);

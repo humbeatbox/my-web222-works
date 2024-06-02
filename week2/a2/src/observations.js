@@ -384,6 +384,37 @@ function getObservationsByTaxa(data, ...taxaNames) {
  ******************************************************************************/
 function getObservationsByLocation(data, options = {}) {
   // TODO
+
+  function isLocationMatch(observation, options) {
+    const [lat, lng] = observation.location.split(',').map(Number);
+
+    if (options.lat !== undefined && options.lng !== undefined) {
+      if (typeof options.lat === 'number' && typeof options.lng === 'number') {
+        return lat === options.lat && lng === options.lng;
+      } else if (
+        options.lat.min !== undefined &&
+        options.lat.max !== undefined &&
+        options.lng.min !== undefined &&
+        options.lng.max !== undefined
+      ) {
+        return (
+          lat >= options.lat.min &&
+          lat <= options.lat.max &&
+          lng >= options.lng.min &&
+          lng <= options.lng.max
+        );
+      }
+    }
+
+    return true; //no indicate return true
+  }
+
+  return data.results.filter((observation) => {
+    if (!observation.location) {
+      return false;
+    }
+    return isLocationMatch(observation, options);
+  });
 }
 //return Array of observations
 
@@ -433,7 +464,20 @@ function getObservationsByLocation(data, options = {}) {
  * Your function should return an Array of these new URLs:
  ******************************************************************************/
 function getPlaceURLs(data) {
-  // TODO
+  // get a object array
+  //results.place_ids
+  let ret = [];
+  // data.results.place_ids is an id array
+
+  data.results.forEach((placeid) => {
+    //focus each placeid
+    placeid.place_ids.forEach((id) => {
+      //focus on add the id in an array
+      ret.push(`https://www.inaturalist.org/observations?place_id=${id}`);
+    });
+  });
+  //return an array of url
+  return ret;
 }
 
 /*******************************************************************************
@@ -472,6 +516,19 @@ function getPlaceURLs(data) {
  ******************************************************************************/
 function getSpeciesObservations(data) {
   // TODO
+  //data.results.taxon;
+  let ret = {};
+  data.results.forEach((ob) => {
+    let checkName = ob.taxon.name;
+    if (ret[checkName]) {
+      //if this attribute exist
+      ret[checkName]++; //this attribute +1
+    } else {
+      ret[checkName] = 1; //create an attribute
+    }
+  });
+  //return an object array
+  return ret;
 }
 
 /**
@@ -490,6 +547,14 @@ function getSpeciesObservations(data) {
  */
 function extractSpeciesNames(data) {
   // TODO
+  let ret = [];
+  data.results.forEach((ob) => {
+    if (!ret.includes(ob.species_guess)) {
+      ret.push(ob.species_guess);
+    }
+  });
+  //return the Array of species names
+  return ret;
 }
 
 /**
@@ -508,8 +573,13 @@ function extractSpeciesNames(data) {
 
 function extractSpeciesNames2(data) {
   // TODO
+  let ret = new Set();
+  data.results.forEach((ob) => {
+    ret.add(ob.species_guess);
+  });
+  //need return an array
+  return Array.from(ret);
 }
-
 // Our unit test files need to access the functions we defined
 // above, so we export them here.
 exports.getTotalResults = getTotalResults;

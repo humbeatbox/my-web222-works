@@ -6,6 +6,7 @@ const places = (...ids) => ({ results: [{ place_ids: ids }] });
 describe('Problem 06 - getPlaceURLs() function', function () {
   test('should return an Array', function () {
     let result = getPlaceURLs(places(1234));
+    //console.log(typeof result);
     expect(Array.isArray(result)).toBe(true);
   });
 
