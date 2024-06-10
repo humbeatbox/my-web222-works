@@ -1,0 +1,26 @@
+
+> web222-assignment-2@7.0.0 test
+> jest --
+
+PASS src/problem-03.test.js
+PASS src/problem-04.test.js
+PASS src/problem-02.test.js
+PASS src/problem-01.test.js
+PASS src/problem-00.test.js
+PASS src/problem-06.test.js
+PASS src/problem-05.test.js
+PASS src/problem-08.test.js
+PASS src/problem-07.test.js
+  ● Console
+
+    console.log
+      { 'Ondatra zibethicus': 1, 'Cordia sebestena sebestena': 1 }
+
+      at Object.log (src/problem-07.test.js:16:13)
+
+
+Test Suites: 9 passed, 9 total
+Tests:       71 passed, 71 total
+Snapshots:   0 total
+Time:        0.282 s, estimated 1 s
+Ran all test suites.
