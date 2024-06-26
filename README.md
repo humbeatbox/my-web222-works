@@ -44,5 +44,9 @@ npm run eslint
 ```
 
 ```=javascript
+npm install --save-dev prettier
+```
+
+```=javascript
 npm run prettier
 ```
