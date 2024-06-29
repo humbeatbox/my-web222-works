@@ -8,9 +8,9 @@
  *
  * Please update the following with your information:
  *
- *      Name:       <YOUR_NAME>
- *      Student ID: <YOUR_STUDENT_ID>
- *      Date:       <SUBMISSION_DATE>
+ *      Name:       Hsiao-Kang Chang
+ *      Student ID: 120049234
+ *      Date:       June 28,2024
  */
 
 // All of our data is available on the global `window` object.
@@ -18,4 +18,98 @@
 const { artists, songs } = window;
 
 // For debugging, display all of our data in the console. You can remove this later.
-console.log({ artists, songs }, "App Data");
+//console.log({ artists, songs }, "App Data");
+
+//load the event while the DOMLoad
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.querySelector("#menu");
+  const selectedArtistTitle = document.querySelector("#selected-artist");
+  const songsTableBody = document.querySelector("#songs");
+
+  //use the ID to list the song
+  function showSongsForArtist(artistId) {
+    //find out array for singer
+    const artist = artists.find((a) => a.artistId === artistId); //if true return the artistID object
+    selectedArtistTitle.textContent = artist.name;
+
+    const leftB = document.createElement("span");
+    leftB.textContent = "(";
+    const rightB = document.createElement("span");
+    rightB.textContent = ")";
+    selectedArtistTitle.appendChild(leftB);
+    artist.urls.forEach((url, index, arr) => {
+      console.log(url.name);
+      const selectedArtistInfo = document.createElement("a");
+      //let the last link without the comma
+      if (index === arr.length - 1) {
+        selectedArtistInfo.textContent = url.name;
+      } else {
+        selectedArtistInfo.textContent = `${url.name},`;
+      }
+      selectedArtistInfo.href = url.url;
+      selectedArtistInfo.target = "_blank";
+      selectedArtistTitle.appendChild(selectedArtistInfo);
+    });
+    selectedArtistTitle.appendChild(rightB);
+    //clear
+    songsTableBody.innerHTML = "";
+    //check the explicit list
+    const filteredSongs = songs.filter((song) => song.artistId === artistId && song.explicit);
+
+    //add the title
+    const songName = document.createElement("th");
+    songName.textContent = "Song Name";
+    const songYear = document.createElement("th");
+    songYear.textContent = "Year";
+    const songDuration = document.createElement("th");
+    songDuration.textContent = "Duration";
+    songsTableBody.appendChild(songName);
+    songsTableBody.appendChild(songYear);
+    songsTableBody.appendChild(songDuration);
+
+    filteredSongs.forEach((song) => {
+      const row = document.createElement("tr");
+      row.addEventListener("click", () => console.log(song));
+
+      //add the song
+      const titleCell = document.createElement("td");
+      const titleLink = document.createElement("a");
+      titleLink.href = song.url;
+      titleLink.target = "_blank";
+      titleLink.textContent = song.title;
+      titleCell.appendChild(titleLink);
+
+      //add year of song
+      const yearCell = document.createElement("td");
+      yearCell.textContent = song.year;
+
+      //transform the time type and add it
+      const durationCell = document.createElement("td");
+      const minutes = Math.floor(song.duration / 60);
+      const seconds = song.duration % 60;
+      durationCell.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+      row.appendChild(titleCell);
+      row.appendChild(yearCell);
+      row.appendChild(durationCell);
+
+      songsTableBody.appendChild(row);
+    });
+  }
+
+  //when load it will create a button
+  artists.forEach((artist) => {
+    const button = document.createElement("button");
+    button.textContent = artist.name;
+    button.id = artist.artistId;
+    menu.appendChild(button);
+
+    //when click call show song by the artistID
+    button.addEventListener("click", () => showSongsForArtist(artist.artistId));
+  });
+
+  //by default, for show the first singer and song when load
+  if (artists.length > 0) {
+    showSongsForArtist(artists[0].artistId);
+  }
+});

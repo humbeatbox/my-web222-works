@@ -17,7 +17,7 @@ window.artists = [
   },
   {
     artistId: "AID-002",
-    name: "madimayouye",
+    name: "Madimayouye",
     urls: [
       { url: "https://zh.wikipedia.org/zh-tw/%E9%A9%AC%E9%A0%94", name: "Wikipedia" },
       { url: "https://www.facebook.com/madimayouye/", name: "Facebook" }
@@ -25,7 +25,7 @@ window.artists = [
   },
   {
     artistId: "AID-003",
-    name: "Song Dongye",
+    name: "SongDongye",
     urls: [
       { url: "https://zh-yue.wikipedia.org/wiki/%E5%AE%8B%E5%86%AC%E9%87%8E", name: "Wikipedia" },
       { url: "https://weibo.com/donye", name: "Weibo" }

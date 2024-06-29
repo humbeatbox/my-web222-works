@@ -84,7 +84,7 @@ window.songs = [
     year: "2018",
     duration: 324,
     url: "https://www.youtube.com/watch?v=1cj1BApoYF0",
-    explicit: false
+    explicit: true
   },
   {
     songId: "SID-520487",
@@ -93,7 +93,7 @@ window.songs = [
     year: "2020",
     duration: 185,
     url: "https://www.youtube.com/watch?v=vjhPBJAGDQ4",
-    explicit: true
+    explicit: false
   },
   {
     songId: "SID-302948",
@@ -102,7 +102,7 @@ window.songs = [
     year: "2014",
     duration: 359,
     url: "https://www.youtube.com/watch?v=qXtMQ8Nxy18",
-    explicit: false
+    explicit: true
   },
   {
     songId: "SID-124759",
