@@ -54,18 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
     //clear
     songsTableBody.innerHTML = "";
     //check the explicit list
-    const filteredSongs = songs.filter((song) => song.artistId === artistId && song.explicit);
+    const filteredSongs = songs.filter(
+      (song) => song.artistId === artistId && song.explicit === false
+    );
 
     //add the title
-    const songName = document.createElement("th");
-    songName.textContent = "Song Name";
-    const songYear = document.createElement("th");
-    songYear.textContent = "Year";
-    const songDuration = document.createElement("th");
-    songDuration.textContent = "Duration";
-    songsTableBody.appendChild(songName);
-    songsTableBody.appendChild(songYear);
-    songsTableBody.appendChild(songDuration);
+    const titleName = ["Song Name", "Year", "Duration"];
+    titleName.forEach((e) => {
+      const title = document.createElement("th");
+      title.textContent = `${e}`;
+      songsTableBody.appendChild(title);
+    });
 
     filteredSongs.forEach((song) => {
       const row = document.createElement("tr");

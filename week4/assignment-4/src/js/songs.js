@@ -12,7 +12,7 @@ window.songs = [
     year: "2013",
     duration: 241,
     url: "https://www.youtube.com/watch?v=MYSVMgRr6pw",
-    explicit: true
+    explicit: false
   },
   {
     songId: "SID-710349",
@@ -21,7 +21,7 @@ window.songs = [
     year: "2014",
     duration: 253,
     url: "https://www.youtube.com/watch?v=SdSCCwtNEjA",
-    explicit: false
+    explicit: true
   },
   {
     songId: "SID-920745",
@@ -39,7 +39,7 @@ window.songs = [
     year: "2014",
     duration: 242,
     url: "https://www.youtube.com/watch?v=bPJSsAr2iu0",
-    explicit: false
+    explicit: true
   },
   {
     songId: "SID-540273",
