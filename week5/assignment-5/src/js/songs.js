@@ -13,7 +13,7 @@ window.songs = [
     duration: 241,
     url: "https://www.youtube.com/watch?v=MYSVMgRr6pw",
     explicit: false,
-    imageUrl: "./public/images/Hozier.jpeg"
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-710349",
@@ -23,7 +23,7 @@ window.songs = [
     duration: 253,
     url: "https://www.youtube.com/watch?v=SdSCCwtNEjA",
     explicit: true,
-    imageUrl: "./public/images/Hozier.jpeg"
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-920745",
@@ -33,7 +33,7 @@ window.songs = [
     duration: 302,
     url: "https://www.youtube.com/watch?v=cI0wUoCLnLk",
     explicit: false,
-    imageUrl: "./public/images/Hozier.jpeg"
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-230589",
@@ -42,7 +42,8 @@ window.songs = [
     year: "2014",
     duration: 242,
     url: "https://www.youtube.com/watch?v=bPJSsAr2iu0",
-    explicit: true
+    explicit: true,
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-540273",
@@ -51,7 +52,8 @@ window.songs = [
     year: "2015",
     duration: 217,
     url: "https://www.youtube.com/watch?v=nH7bjV0Q_44",
-    explicit: false
+    explicit: false,
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-683920",
@@ -60,7 +62,8 @@ window.songs = [
     year: "2018",
     duration: 235,
     url: "https://www.youtube.com/watch?v=OSye8OO5TkM",
-    explicit: true
+    explicit: true,
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-452091",
@@ -69,7 +72,8 @@ window.songs = [
     year: "2019",
     duration: 231,
     url: "https://www.youtube.com/watch?v=JJ9IX4zgyLs",
-    explicit: false
+    explicit: false,
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-582047",
@@ -78,7 +82,8 @@ window.songs = [
     year: "2018",
     duration: 232,
     url: "https://www.youtube.com/watch?v=j2YgDua2gpk",
-    explicit: true
+    explicit: true,
+    imageUrl: "./public/images/Hozier.jpg"
   },
   {
     songId: "SID-639204",

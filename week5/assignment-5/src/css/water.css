@@ -1634,71 +1634,77 @@ body > footer {
     text-decoration: underline;
   }
 }
+/* personal css */
+#menu {
+  text-align: center;
+  padding: 10px;
+}
 
+#menu a {
+  margin: 0 10px; /* 调整链接之间的间距 */
+  text-decoration: none;
+  color: #333;
+}
+#selected-artist {
+  text-align: center;
+}
 /* my card */
 /* Container-specific styles */
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 #container img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 40px;
   height: 214px;
   object-fit: cover;
 }
 
-#container {
-  background-color: #eaeff1;
-  font-family: "Raleway", sans-serif;
-  max-width: 300px;
-  margin: 0 auto; /* Center the container in middle on horizontal axis */
-  margin-top: 20vh; /* Add empty space above the container (20% of the view height) */
+#container .card:hover {
+  transform: scale(1.05);
 }
 
 #container .card {
-  background-color: white;
-  border: 1px solid #bacdd8;
-  padding: 8px;
+  background-color: #d1d2f6;
+  border: 7px solid #b4cef6;
   border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
 }
-
-#container .tag {
-  padding: 4px 8px;
-  border: 1px solid #e5eaed;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #788697;
-}
-
-#container .name {
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 16px;
-}
-
-#container p {
-  font-size: 14px;
-  color: #7f8c9b;
-  line-height: 150%;
-}
-
 #container .card__details {
-  padding: 16px 8px 8px 8px; /* Space around the details */
+  text-align: center;
 }
 
-#container button {
-  border: none;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-weight: 600;
-  color: #0077ff;
-  background-color: #e0efff;
-  margin: 0 auto; /* Center button */
-  display: block;
-  cursor: pointer; /* Pointer cursor for clickable element */
+#container .songTitleTag {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* #container button:focus,
-#container button:hover {
-  background-color: #0077ff;
-  color: #e0efff;
-} */
+#container .yearTag,
+#container .durationTag {
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #5050e6;
+  margin-bottom: 8px;
+  display: inline-block;
+}
 /* end of my card */
