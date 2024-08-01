@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=500, initial-scale=1" />
+
+    <!-- Change this to your name-->
+    <meta name="author" content="Hsiao-Kang Chang" />
+
+    <title>WEB222 Music App</title>
+    <!-- Classless CSS Stylesheet - https://watercss.kognise.dev/ -->
+    <link rel="stylesheet" href="./css/water.css" />
+  </head>
+  <body>
+    <header>
+      <section>
+        <nav style="margin: 3rem">
+          <ul>
+            <li>Home</li>
+            <li>
+              <a href="./addNewSong.html">Add New Song</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <!-- Change this to your App's info -->
+      <h1>Modern Folk Music</h1>
+      <p>
+        This folk music style differs significantly from traditional folk music in several ways:
+      </p>
+      <ul>
+        <li>
+          <strong>Lyrics</strong>: Traditional folk music typically reflects rural life, labor
+          scenes, and folk stories. In contrast, modern folk music lyrics more often reflect
+          emotions, personal experiences, and social phenomena of urban life. The lyrics usually
+          have a strong personal touch and poetic quality, resonating deeply with the younger
+          generation.
+        </li>
+        <li>
+          <strong>Musical Style</strong>: Traditional folk music often uses simple instruments like
+          the erhu and pipa, with a plain and unadorned musical style. Modern folk music, however,
+          incorporates elements of contemporary popular music, with the guitar being the primary
+          accompaniment instrument. The melodies are more diverse and modern, making them more
+          appealing and engaging compared to traditional folk music.
+        </li>
+        <li>
+          <strong>Singing Style</strong>: Traditional folk music features a straightforward and
+          simple singing style, focusing on storytelling. Modern folk music places more emphasis on
+          emotional expression, with a singing style that incorporates more personal emotions,
+          allowing listeners to deeply feel the sentiments and atmospheres conveyed in the songs.
+        </li>
+        <li>
+          <strong>Music Production</strong>: The use of modern technology has led to more refined
+          music production and higher sound quality, which is rare in traditional folk music.
+          Advances in recording techniques and production methods make this music more easily
+          disseminated across various media platforms.
+        </li>
+      </ul>
+      <p>
+        Overall, this folk music style maintains the simplicity of traditional folk while
+        incorporating modern musical elements and personal emotions, resulting in music that is both
+        traditionally grounded and contemporarily relevant.
+      </p>
+    </header>
+
+    <nav id="menu">
+      <!-- Dynamically create your menu category buttons here -->
+    </nav>
+
+    <hr />
+
+    <main>
+      <h2 id="selected-artist">
+        <!-- Dynamically update the selected category title -->
+      </h2>
+
+      <table>
+        <thead id="songsTitle">
+          <!-- Statically create the headings for your table here -->
+        </thead>
+        <tbody id="songs">
+          <!-- Dynamically create your product rows here -->
+        </tbody>
+      </table>
+      <!-- new card -->
+      <!-- A div with container id to hold the card -->
+
+      <div id="container">
+        <!-- A div with card class for the card  -->
+        <div class="card" data-url="https://www.youtube.com/watch?v=JJ9IX4zgyLs">
+          <img
+            src="https://images.unsplash.com/photo-1536323760109-ca8c07450053"
+            alt="Lago di Braies"
+          />
+          <!-- A div with card__details class to hold the details in the card  -->
+          <div class="card__details">
+            <!-- Span with tag class for the tag -->
+            <div class="songTitleTag">南山南(Parallel Galaxies)南山南(Parallel Galaxies)</div>
+
+            <div class="yearTag">2018</div>
+            <div class="durationTag">MMYY</div>
+            <!-- A div with name class for the name of the card -->
+            <!-- <div class="songTitleTag">Lago di Braies</div> -->
+          </div>
+        </div>
+      </div>
+      <!-- end of cards -->
+    </main>
+
+    <!-- JavaScript Data Files -->
+    <script src="./js/artists.js"></script>
+    <script src="./js/songs.js"></script>
+    <!-- Main App JavaScript File -->
+    <script src="./js/app.js"></script>
+  </body>
+  <footer>
+    <form id="newsletter-form" action="https://httpbin.org/post" method="POST">
+      <label for="subscribe-email">Subscribe to our Newsletter</label>
+      <input
+        type="email"
+        id="subscribe-email"
+        name="email"
+        placeholder="smaple@myseneca.ca"
+        spellcheck="false"
+        title="subscription email!!!"
+        autocomplete="email"
+      />
+      <button type="submit">Subscribe</button>
+    </form>
+  </footer>
+</html>

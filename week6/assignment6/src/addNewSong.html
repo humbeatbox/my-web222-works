@@ -1,0 +1,100 @@
+<!-- Create your About page here. Make sure you include citations -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <!-- <link rel="stylesheet" href="tufte.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+  <body>
+    <section>
+      <nav style="margin: 3rem">
+        <ul>
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>addNewSong</li>
+        </ul>
+      </nav>
+    </section>
+    <main>
+      <h1>Hi this is Gary's WEB222 assignment</h1>
+      <section>
+        <div>I am a software engineer who is learning web!</div>
+      </section>
+      <form action="https://httpbin.org/post" method="post">
+        Add some new song for me
+        <!-- 1Artist Name: -->
+        <label for="artistName">Artist Name:</label>
+        <input type="text" id="artistName" name="artistName" tabindex="1" required />
+        <!-- 2Music Genre: -->
+        <label for="genre">Music Genre:</label>
+        <input list="genres" id="genre" name="genre" tabindex="2" required />
+        <datalist id="genres">
+          <option value="Rock"></option>
+          <option value="Pop"></option>
+          <option value="Hip-Hop"></option>
+          <option value="Jazz"></option>
+          <option value="Classical"></option>
+          <option value="Electronic"></option>
+          <option value="Country"></option>
+          <option value="Reggae"></option>
+          <option value="Blues"></option>
+          <option value="Metal"></option>
+        </datalist>
+        <!-- 3social-media -->
+        <label for="social-media">Social Media URLs:</label>
+        <input type="url" id="social-media" name="social_media[]" tabindex="3" multiple />
+
+        <label for="songName">Song Name:</label>
+        <input type="text" id="songName" name="songName" required />
+        <!-- 4 -->
+
+        <label for="songs-videos">Example Songs/Videos URLs:</label>
+        <div class="song-video-group">
+          <input type="url" name="songs_videos[]" placeholder="https://example.com/song" />
+          <label for="explicit-lyrics" class="checkbox-container">
+            <input type="checkbox" id="explicit-lyrics" name="explicit_lyrics" tabindex="5" />
+            Explicit Lyrics
+          </label>
+        </div>
+        <button type="button" id="add-song-video">Add Another Song/Video</button>
+        <!-- 5explicit lyrics -->
+        <!-- <label for="explicit-lyrics">
+          <input type="checkbox" id="explicit-lyrics" name="explicit_lyrics" tabindex="5" />
+          Explicit Lyrics
+        </label> -->
+        <!-- 6description -->
+        <label for="description">Description for this song</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="50"
+          tabindex="6"
+          placeholder="A brief description of the song, such as: style, creative background, etc."
+          required
+        ></textarea>
+
+        <button type="submit" tabindex="7">Submit</button>
+      </form>
+    </main>
+    <script>
+      document.getElementById("add-song-video").addEventListener("click", function () {
+        console.log("Add song video");
+        const container = document.getElementById("songs-video-group");
+        const input = document.createElement("input");
+        input.type = "url";
+        input.name = "songs_videos[]";
+        input.placeholder = "https://example.com/song";
+        container.appendChild(input);
+      });
+    </script>
+  </body>
+  <footer>
+    <p>Author: Gary Chang</p>
+    <p><a href="hchang67@myseneca.ca">hchang67@myseneca.ca</a></p>
+  </footer>
+</html>
