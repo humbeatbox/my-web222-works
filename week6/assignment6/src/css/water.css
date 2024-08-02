@@ -1708,7 +1708,6 @@ body > footer {
   display: inline-block;
 }
 /* end of my card */
-
 /* for add song btn */
 #add-song-video {
   justify-content: center;
@@ -1717,4 +1716,27 @@ body > footer {
   padding: 5px 10px; /* Smaller padding */
   font-size: 10px; /* Smaller font size */
   border-radius: 4px;
+}
+
+/* 每個歌曲/視頻輸入組 */
+.song-video-group {
+  display: flex; /* 使用Flexbox布局 */
+  align-items: center; /* 垂直居中對齊 */
+  gap: 10px; /* 子元素之間的間距 */
+  margin-top: 10px; /* 頂部間距 */
+}
+
+.song-video-group input[type="url"] {
+  flex: 1; /* 讓URL輸入框占據剩餘的水平空間 */
+  margin-right: 10px; /* 右側間距以確保與複選框分開 */
+}
+
+.checkbox-container {
+  display: flex; /* 將複選框與文字居中對齊 */
+  align-items: center; /* 垂直居中對齊 */
+  margin-left: 10px; /* 在文字左邊留出空間 */
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px; /* 複選框與文字之間的間距 */
 }

@@ -7,6 +7,7 @@
     <title>About</title>
     <!-- <link rel="stylesheet" href="tufte.css" /> -->
     <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+    <link rel="stylesheet" href="css/water.css" />
   </head>
   <body>
     <section>
@@ -24,7 +25,7 @@
       <section>
         <div>I am a software engineer who is learning web!</div>
       </section>
-      <form action="https://httpbin.org/post" method="post">
+      <form id="songForm" action="https://httpbin.org/post" method="post">
         Add some new song for me
         <!-- 1Artist Name: -->
         <label for="artistName">Artist Name:</label>
@@ -46,26 +47,25 @@
         </datalist>
         <!-- 3social-media -->
         <label for="social-media">Social Media URLs:</label>
-        <input type="url" id="social-media" name="social_media[]" tabindex="3" multiple />
+        <input type="url" id="social-media" name="social_media[]" tabindex="3" />
 
         <label for="songName">Song Name:</label>
-        <input type="text" id="songName" name="songName" required />
+        <input type="text" id="songName" name="song-Name" required />
         <!-- 4 -->
-
-        <label for="songs-videos">Example Songs/Videos URLs:</label>
-        <div class="song-video-group">
-          <input type="url" name="songs_videos[]" placeholder="https://example.com/song" />
-          <label for="explicit-lyrics" class="checkbox-container">
-            <input type="checkbox" id="explicit-lyrics" name="explicit_lyrics" tabindex="5" />
-            Explicit Lyrics
-          </label>
+        <label for="songs-videos-1">Example Songs/Videos URLs:</label>
+        <div id="songs-videos-container">
+          <div class="song-video-group">
+            <input
+              type="url"
+              id="songs-videos-1"
+              name="songs_videos[]"
+              placeholder="https://example.com/song"
+            />
+            <label for="explicit-lyrics-1" class="checkbox-container">Explicit Lyrics</label>
+            <input type="checkbox" id="explicit-lyrics-1" name="explicit_lyrics[]" tabindex="5" />
+          </div>
         </div>
-        <button type="button" id="add-song-video">Add Another Song/Video</button>
-        <!-- 5explicit lyrics -->
-        <!-- <label for="explicit-lyrics">
-          <input type="checkbox" id="explicit-lyrics" name="explicit_lyrics" tabindex="5" />
-          Explicit Lyrics
-        </label> -->
+        <button type="button" id="add-song-video" tabindex="6">Add Another Song/Video</button>
         <!-- 6description -->
         <label for="description">Description for this song</label>
         <textarea
@@ -73,28 +73,56 @@
           name="description"
           rows="4"
           cols="50"
-          tabindex="6"
+          tabindex="7"
           placeholder="A brief description of the song, such as: style, creative background, etc."
-          required
         ></textarea>
 
-        <button type="submit" tabindex="7">Submit</button>
+        <button type="submit" tabindex="8">Submit</button>
       </form>
     </main>
-    <script>
+
+    <footer>
+      <p>Author: Gary Chang</p>
+      <p><a href="mailto:hchang67@myseneca.ca">hchang67@myseneca.ca</a></p>
+    </footer>
+    <!-- <script>
       document.getElementById("add-song-video").addEventListener("click", function () {
-        console.log("Add song video");
-        const container = document.getElementById("songs-video-group");
+        const container = document.getElementById("songs-videos-container");
+
+        const eachDiv = document.createElement("div");
+        eachDiv.className = "song-video-group"; // ensure class name is correct
+
+        // create input element
         const input = document.createElement("input");
         input.type = "url";
         input.name = "songs_videos[]";
+        //for each input, set the same id but can be identified
+        input.id = `songs-videos-${container.children.length + 1}`;
         input.placeholder = "https://example.com/song";
-        container.appendChild(input);
+
+        // create label element
+        const label = document.createElement("label");
+        //for each label, set the same id but can be identified
+        label.htmlFor = `explicit-lyrics-${container.children.length + 1}`;
+        label.className = "checkbox-container";
+        label.textContent = "Explicit Lyrics";
+
+        // create checkbox element
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        //for each checkbox, set the same id but can be identified
+        checkbox.id = `explicit-lyrics-${container.children.length + 1}`;
+        checkbox.name = "explicit_lyrics[]";
+        checkbox.tabIndex = 5;
+
+        // insert elements
+        eachDiv.appendChild(input);
+        eachDiv.appendChild(label);
+        eachDiv.appendChild(checkbox);
+
+        container.appendChild(eachDiv);
       });
-    </script>
+    </script> -->
+    <script src="./js/addNewSong.js"></script>
   </body>
-  <footer>
-    <p>Author: Gary Chang</p>
-    <p><a href="hchang67@myseneca.ca">hchang67@myseneca.ca</a></p>
-  </footer>
 </html>
